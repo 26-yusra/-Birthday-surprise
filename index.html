@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My Love ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: radial-gradient(circle, #300008, #080000 75%);
+    color: white;
+    font-family: Georgia, serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 15px;
+}
+
+.card {
+    width: 100%;
+    max-width: 850px;
+    padding: 35px 20px;
+    text-align: center;
+    background: rgba(12, 0, 0, 0.95);
+    border: 2px solid #ff1744;
+    border-radius: 25px;
+    box-shadow: 0 0 25px #750019;
+}
+
+h1 {
+    font-size: clamp(30px, 5vw, 52px);
+    line-height: 1.3;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+.red, .heart {
+    color: #ff1744;
+}
+
+.heart {
+    font-size: 30px;
+    margin: 20px 0;
+}
+
+.message, #quote {
+    font-size: 20px;
+    font-style: italic;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 22px auto;
+}
+
+button {
+    background: #d50032;
+    color: white;
+    border: 1px solid #ff1744;
+    padding: 14px 25px;
+    margin: 8px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ff1744;
+    box-shadow: 0 0 15px #ff1744;
+}
+
+#gallery, #wishes, #finalMessage, #musicPlayer {
+    display: none;
+}
+
+.photo-frame {
+    margin: 25px auto;
+    max-width: 380px;
+}
+
+#photo {
+    width: 100%;
+    height: 350px;
+    object-fit: contain;
+    border: 2px solid #ff1744;
+    border-radius: 15px;
+    background: #150000;
+}
+
+#counter {
+    color: #ff8a9f;
+}
+
+.wish-number {
+    color: #ff8a9f;
+    letter-spacing: 3px;
+}
+
+#finalMessage h2 {
+    font-size: clamp(28px, 5vw, 42px);
+    color: #ff1744;
+    text-shadow: 0 0 15px #ff1744;
+}
+
+#musicPlayer {
+    margin: 20px auto;
+}
+
+audio {
+    width: 100%;
+    max-width: 350px;
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 25px 15px;
+    }
+
+    .message, #quote {
+        font-size: 18px;
+    }
+
+    #photo {
+        height: 280px;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="card">
+
+    <h1>Happy Birthday <span class="red">My Love</span></h1>
+    <div class="heart">━━ ♥ ━━</div>
+
+    <!-- WELCOME PAGE -->
+    <div id="welcome">
+        <h2>To My Favourite Person ❤️</h2>
+
+        <p class="message">
+            Today is all about you. You deserve endless
+            happiness, success and beautiful moments.
+        </p>
+
+        <p class="message">
+            I have a little surprise waiting for you.
+            Are you ready? 🖤
+        </p>
+
+        <button onclick="openSurprise()">
+            Open Your Surprise ❤️
+        </button>
+    </div>
+
+    <!-- MUSIC PLAYER -->
+    <div id="musicPlayer">
+        <p class="red">🎶 A Little Music For You 🎶</p>
+        <audio id="song" controls loop>
+            <source src="song.mp3" type="audio/mpeg">
+            Your browser does not support audio.
+        </audio>
+        <p style="color:#ff8a9f;font-size:13px;">
+            Press play to listen ❤️
+        </p>
+    </div>
+
+    <!-- PHOTO GALLERY -->
+    <div id="gallery">
+        <h2>My Favourite Pictures ❤️</h2>
+
+        <p class="message">
+            Here are some pictures of you,
+            the one who makes my world brighter.
+        </p>
+
+        <div class="photo-frame">
+            <img id="photo" src="photo1.jpeg"
+                 alt="Birthday picture">
+        </div>
+
+        <p id="quote"></p>
+
+        <button id="previousButton" onclick="previousPhoto()">
+            ❮ Previous
+        </button>
+
+        <button id="nextPhotoButton" onclick="nextPhoto()">
+            Next Picture ❤️ ❯
+        </button>
+
+        <p id="counter">Picture 1 of 4</p>
+    </div>
+
+    <!-- ROMANTIC WISHES -->
+    <div id="wishes">
+        <p class="wish-number" id="wishCounter"></p>
+        <h2 id="wishTitle" class="red"></h2>
+        <p id="wishText" class="message"></p>
+
+        <button id="nextWishButton" onclick="nextWish()">
+            Next Wish ❤️ ❯
+        </button>
+    </div>
+
+    <!-- FINAL SURPRISE -->
+    <div id="finalMessage">
+        <div class="heart">♥</div>
+
+        <h2>I LOVE YOU MORE THAN YOU CAN EVER IMAGINE ❤️</h2>
+
+        <p class="message">
+            No words, no wishes, and no website could ever
+            fully explain how special you are to me.
+            I hope your life is filled with happiness,
+            success, peace and beautiful moments.
+        </p>
+
+        <p class="message">
+            Happy Birthday, My Love. ❤️
+            You deserve all the beautiful things
+            this world has to offer.
+        </p>
+
+        <div class="heart">━━ ♥ ━━</div>
+        <h1 class="red">I LOVE YOU ❤️</h1>
+        <p class="message">More than you can ever imagine. ♾️</p>
+    </div>
+
+    <div class="heart">━━ ♥ ━━</div>
+</div>
+
+<script>
+const photos = [
+    {
+        src: "photo1.jpeg",
+        quote: "May your special day bring you happiness, success and all the love you deserve. ❤️"
+    },
+    {
+        src: "photo2.jpeg",
+        quote: "You deserve all the happiness in the world. Keep smiling always. 🖤"
+    },
+    {
+        src: "photo3.jpeg",
+        quote: "May every dream of yours come true. Keep shining, today and always. ✨"
+    },
+    {
+        src: "photo4.jpeg",
+        quote: "Happy Birthday to someone who means so much to me. ❤️"
+    }
+];
+
+const wishes = [
+    {
+        title: "Happy Birthday, My Love ❤️",
+        text: "Today is all about you, the person who holds such a special place in my heart. I hope your life is filled with happiness, success, peace and everything your heart wishes for. You deserve the most beautiful things in this world."
+    },
+    {
+        title: "You Are So Special 💌",
+        text: "If I could give you one thing in life, I would give you the ability to see yourself through my eyes. Maybe then you would understand how special you are and why you mean so much to me."
+    },
+    {
+        title: "My Favourite Person 🖤",
+        text: "Out of all the people in this world, you have a place in my heart that nobody else could ever fill. Your happiness matters to me, your dreams matter to me, and I always wish to see you smiling and achieving everything you work for."
+    },
+    {
+        title: "My Birthday Prayer For You ✨",
+        text: "May Allah bless you with a long, happy and peaceful life. May He guide you towards success, protect you from difficulties, fulfil your beautiful dreams and always give you reasons to smile. Ameen. ❤️"
+    },
+    {
+        title: "One Last Thing... ❤️",
+        text: "No birthday message could ever fully explain what you mean to me. I hope you always remember how special you are, how much happiness you deserve, and how deeply I care about you. You mean more to me than these words can ever show."
+    }
+];
+
+let currentPhoto = 0;
+let currentWish = 0;
+
+function openSurprise() {
+    document.getElementById("welcome").style.display = "none";
+    document.getElementById("gallery").style.display = "block";
+    document.getElementById("musicPlayer").style.display = "block";
+
+    showPhoto();
+}
+
+function showPhoto() {
+    document.getElementById("photo").src =
+        photos[currentPhoto].src;
+
+    document.getElementById("quote").textContent =
+        photos[currentPhoto].quote;
+
+    document.getElementById("counter").textContent =
+        "Picture " + (currentPhoto + 1) +
+        " of " + photos.length;
+
+    document.getElementById("previousButton").style.display =
+        currentPhoto === 0 ? "none" : "inline-block";
+
+    document.getElementById("nextPhotoButton").textContent =
+        currentPhoto === photos.length - 1
+        ? "Read My Wishes ❤️ ❯"
+        : "Next Picture ❤️ ❯";
+}
+
+function nextPhoto() {
+    if (currentPhoto < photos.length - 1) {
+        currentPhoto++;
+        showPhoto();
+    } else {
+        document.getElementById("gallery").style.display = "none";
+        document.getElementById("wishes").style.display = "block";
+        currentWish = 0;
+        showWish();
+    }
+}
+
+function previousPhoto() {
+    if (currentPhoto > 0) {
+        currentPhoto--;
+        showPhoto();
+    }
+}
+
+function showWish() {
+    document.getElementById("wishCounter").textContent =
+        "♡ WISH " + (currentWish + 1) +
+        " OF " + wishes.length + " ♡";
+
+    document.getElementById("wishTitle").textContent =
+        wishes[currentWish].title;
+
+    document.getElementById("wishText").textContent =
+        wishes[currentWish].text;
+
+    document.getElementById("nextWishButton").textContent =
+        currentWish === wishes.length - 1
+        ? "One Last Surprise ❤️"
+        : "Next Wish ❤️ ❯";
+}
+
+function nextWish() {
+    if (currentWish < wishes.length - 1) {
+        currentWish++;
+        showWish();
+    } else {
+        document.getElementById("wishes").style.display = "none";
+        document.getElementById("finalMessage").style.display = "block";
+    }
+}
+</script>
+</body>
+</html>
